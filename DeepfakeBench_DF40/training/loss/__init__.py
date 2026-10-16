@@ -21,3 +21,5 @@ from .vgg_loss import VGGLoss
 from .js_loss import JS_Loss
 from .patch_consistency_loss import PatchConsistencyLoss
 from .supercontrast_loss import SupConLoss
+
+from .hsic_loss import HSICLoss

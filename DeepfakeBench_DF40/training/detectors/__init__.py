@@ -17,3 +17,5 @@ from .clip_detector import CLIPDetector
 from .sbi_detector import SBIDetector
 from .i3d_detector import I3DDetector
 from .rfm_detector import RFMDetector
+
+from .effort_custom_detector import Effort_Custom_Detector
