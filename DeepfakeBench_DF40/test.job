@@ -14,8 +14,8 @@ echo "[job] Virtual environment activated."
 
 # original loss function (both)
 python training/test.py \
-    --detector_path ./training/config/detector/effort_ce_hsic_masked_counterfactual_backbone_clip_cf.yaml \
-    --weights_path /data/curtin_eecms/curtin_yanda/deepfakes/DeepfakeBench/logs/training/effort_ce_hsic_masked_counterfactual_backbone_effort_custom_seed_1024_2026-09-02-00-01-53/final/ckpt_final.pth \
+    --detector_path ./training/config/detector/effort_ce_orthogonal_weight.yaml \
+    --weights_path /data/curtin_eecms/curtin_yanda/deepfakes/DeepfakeBench/logs/training/effort_ce_orthogonal_weight_effort_custom_2026-08-23-19-55-41/final/ckpt_final.pth \
     --test_dataset \
     blendface_ff \
     e4s_ff \
@@ -27,8 +27,8 @@ python training/test.py \
     uniface_ff
 
 python training/test.py \
-    --detector_path ./training/config/detector/effort_ce_hsic_masked_counterfactual_backbone_clip_cf.yaml \
-    --weights_path /data/curtin_eecms/curtin_yanda/deepfakes/DeepfakeBench/logs/training/effort_ce_hsic_masked_counterfactual_backbone_effort_custom_seed_1024_2026-09-02-00-01-53/final/ckpt_final.pth \
+    --detector_path ./training/config/detector/effort_ce_orthogonal_weight.yaml \
+    --weights_path /data/curtin_eecms/curtin_yanda/deepfakes/DeepfakeBench/logs/training/effort_ce_orthogonal_weight_effort_custom_2026-08-23-19-55-41/final/ckpt_final.pth \
     --test_dataset \
     blendface_cdf \
     e4s_cdf \
