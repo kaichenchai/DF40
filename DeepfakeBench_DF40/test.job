@@ -1,0 +1,40 @@
+#!/bin/bash
+#rj name=effort_cross_dataset_test
+#rj queue=curtin_eecms
+#rj runtime=10
+#rj logdir=logs/slurm/
+#rj priority=550
+#rj features=a100
+#rj cpus=8
+#rj mem=64G
+#rj gpus=a100:1
+
+source /data/curtin_eecms/curtin_yanda/deepfakes/DeepfakeBench/.venv/bin/activate
+echo "[job] Virtual environment activated."
+
+# original loss function (both)
+python training/test.py \
+    --detector_path ./training/config/detector/effort_ce_hsic_masked_counterfactual_backbone_clip_cf.yaml \
+    --weights_path /data/curtin_eecms/curtin_yanda/deepfakes/DeepfakeBench/logs/training/effort_ce_hsic_masked_counterfactual_backbone_effort_custom_seed_1024_2026-09-02-00-01-53/final/ckpt_final.pth \
+    --test_dataset \
+    blendface_ff \
+    e4s_ff \
+    facedancer_ff \
+    fsgan_ff \
+    inswap_ff \
+    mobileswap_ff \
+    simswap_ff \
+    uniface_ff
+
+python training/test.py \
+    --detector_path ./training/config/detector/effort_ce_hsic_masked_counterfactual_backbone_clip_cf.yaml \
+    --weights_path /data/curtin_eecms/curtin_yanda/deepfakes/DeepfakeBench/logs/training/effort_ce_hsic_masked_counterfactual_backbone_effort_custom_seed_1024_2026-09-02-00-01-53/final/ckpt_final.pth \
+    --test_dataset \
+    blendface_cdf \
+    e4s_cdf \
+    facedancer_cdf \
+    fsgan_cdf \
+    inswap_cdf \
+    mobileswap_cdf \
+    simswap_cdf \
+    uniface_cdf
